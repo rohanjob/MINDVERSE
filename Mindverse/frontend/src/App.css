@@ -1,0 +1,222 @@
+/* App-specific styles */
+
+.App {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--gradient-cosmic);
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeOut 0.5s ease 1.5s forwards;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.aum-loader {
+    font-size: 8rem;
+    color: var(--divine-gold);
+    text-shadow: 0 0 60px rgba(247, 183, 49, 0.6);
+    animation: aumPulseLoader 2s ease-in-out infinite;
+    margin-bottom: 2rem;
+}
+
+@keyframes aumPulseLoader {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.loading-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--sacred-white);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Divine Footer */
+.divine-footer {
+    position: relative;
+    background: linear-gradient(180deg, transparent 0%, rgba(15, 12, 41, 0.95) 20%, rgba(15, 12, 41, 1) 100%);
+    padding: 6rem 2rem 3rem;
+    text-align: center;
+    border-top: 1px solid rgba(247, 183, 49, 0.2);
+    margin-top: 8rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-aum {
+    font-size: 4rem;
+    color: var(--divine-gold);
+    margin-bottom: 2rem;
+    text-shadow: 0 0 40px rgba(247, 183, 49, 0.4);
+    animation: aumPulse 8s ease-in-out infinite;
+}
+
+.footer-text {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--sacred-white);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.footer-blessing {
+    font-family: var(--font-verse);
+    font-size: 1.5rem;
+    color: var(--divine-gold);
+    font-style: italic;
+    margin: 2rem 0;
+}
+
+.footer-links {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(247, 183, 49, 0.1);
+    font-size: 0.9rem;
+    color: rgba(248, 249, 250, 0.6);
+}
+
+/* Navigation Styles */
+.divine-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    background: rgba(15, 12, 41, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(247, 183, 49, 0.2);
+    z-index: 1000;
+    transition: var(--transition-smooth);
+}
+
+.divine-navigation.scrolled {
+    background: rgba(15, 12, 41, 0.95);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--divine-gold);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-smooth);
+}
+
+.nav-logo:hover {
+    text-shadow: 0 0 20px rgba(247, 183, 49, 0.6);
+}
+
+.nav-aum {
+    font-size: 2rem;
+    animation: aumPulse 6s ease-in-out infinite;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--sacred-white);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    position: relative;
+    transition: var(--transition-smooth);
+    text-transform: uppercase;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--divine-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--divine-gold);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .footer-aum {
+        font-size: 3rem;
+    }
+
+    .footer-blessing {
+        font-size: 1.2rem;
+    }
+}

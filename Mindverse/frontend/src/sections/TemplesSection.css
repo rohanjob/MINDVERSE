@@ -1,0 +1,266 @@
+/* Temples Section Styles */
+
+.temples-section {
+    min-height: 100vh;
+    background: linear-gradient(180deg,
+            rgba(15, 12, 41, 1) 0%,
+            rgba(22, 33, 62, 0.8) 50%,
+            rgba(15, 12, 41, 1) 100%);
+    padding: 8rem 0;
+}
+
+/* Temples Grid */
+.temples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.temple-card {
+    position: relative;
+    background: linear-gradient(135deg,
+            rgba(26, 26, 46, 0.8) 0%,
+            rgba(22, 33, 62, 0.6) 100%);
+    border: 1px solid rgba(247, 183, 49, 0.2);
+    border-radius: 25px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.temple-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--divine-gold);
+    box-shadow: 0 20px 60px rgba(247, 183, 49, 0.3);
+}
+
+/* Temple Image */
+.temple-image {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.temple-kedarnath {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
+.temple-kashi {
+    background: linear-gradient(135deg, #f39c12, #e74c3c);
+}
+
+.temple-rameshwaram {
+    background: linear-gradient(135deg, #16a085, #27ae60);
+}
+
+.temple-somnath {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+}
+
+.temple-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(15, 12, 41, 0.8) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.temple-card:hover .temple-overlay {
+    opacity: 1;
+}
+
+.temple-aum {
+    font-size: 5rem;
+    color: var(--divine-gold);
+    text-shadow: 0 0 60px rgba(247, 183, 49, 0.8);
+    animation: aumPulse 4s ease-in-out infinite;
+}
+
+/* Temple Content */
+.temple-content {
+    padding: 2.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.temple-name {
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    color: var(--divine-gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.temple-location {
+    font-family: var(--font-verse);
+    font-size: 1.1rem;
+    color: rgba(248, 249, 250, 0.7);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.location-icon {
+    font-size: 1.2rem;
+}
+
+.temple-description {
+    font-size: 1.1rem;
+    color: rgba(248, 249, 250, 0.85);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+/* Temple Significance */
+.temple-significance {
+    background: rgba(247, 183, 49, 0.1);
+    border-left: 3px solid var(--divine-gold);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.significance-label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--divine-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.significance-text {
+    font-style: italic;
+    color: rgba(248, 249, 250, 0.9);
+}
+
+/* Temple Explore Button */
+.temple-explore-btn {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 2px solid var(--divine-gold);
+    color: var(--divine-gold);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.temple-explore-btn:hover {
+    background: var(--divine-gold);
+    color: var(--cosmic-indigo);
+    transform: translateX(5px);
+    box-shadow: 0 5px 25px rgba(247, 183, 49, 0.4);
+}
+
+.btn-arrow {
+    transition: transform 0.3s ease;
+}
+
+.temple-explore-btn:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+/* Temple Glow Effect */
+.temple-glow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--divine-gold) 50%,
+            transparent 100%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.temple-card:hover .temple-glow {
+    opacity: 1;
+}
+
+/* Temples Decoration */
+.temples-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 6rem;
+    padding: 0 2rem;
+}
+
+.decoration-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(247, 183, 49, 0.5) 50%,
+            transparent 100%);
+    max-width: 400px;
+}
+
+.decoration-aum {
+    font-family: var(--font-verse);
+    font-size: clamp(1.3rem, 2vw, 2rem);
+    color: var(--divine-gold);
+    font-weight: 600;
+    text-shadow: 0 0 30px rgba(247, 183, 49, 0.5);
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .temples-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .temple-image {
+        height: 250px;
+    }
+
+    .temple-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .temple-name {
+        font-size: 1.8rem;
+    }
+
+    .temple-description {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .decoration-line {
+        max-width: 100px;
+    }
+
+    .decoration-aum {
+        font-size: 1.2rem;
+    }
+}

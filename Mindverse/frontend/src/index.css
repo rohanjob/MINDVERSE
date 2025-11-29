@@ -1,0 +1,361 @@
+/* ========================== */
+/* MINDVERSE GLOBAL STYLES */
+/* Epic Cinematic Spiritual Design System */
+/* ========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cosmic Color Palette */
+  --cosmic-deep-indigo: #0f0c29;
+  --cosmic-indigo: #1a1a2e;
+  --cosmic-blue: #16213e;
+  --cosmic-purple: #2d1b69;
+  --divine-saffron: #ff6b35;
+  --divine-gold: #f7b731;
+  --divine-copper: #d35400;
+  --sacred-white: #f8f9fa;
+  --temple-stone: #8b7355;
+  --ganga-blue: #4a90e2;
+  
+  /* Gradients */
+  --gradient-cosmic: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  --gradient-divine: linear-gradient(135deg, #ff6b35 0%, #f7b731 100%);
+  --gradient-sacred: linear-gradient(180deg, rgba(15,12,41,0.95) 0%, rgba(26,26,46,0.98) 100%);
+  
+  /* Typography */
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-verse: 'Spectral', serif;
+  
+  /* Spacing */
+  --section-padding: 8rem 0;
+  --container-padding: 0 5%;
+  
+  /* Animation Timing */
+  --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--cosmic-indigo);
+  color: var(--sacred-white);
+  overflow-x: hidden;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* Typography Scale */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  background: linear-gradient(135deg, #f7b731 0%, #ff6b35 50%, #f7b731 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+  text-shadow: 0 0 60px rgba(247, 183, 49, 0.3);
+}
+
+h2 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  color: var(--divine-gold);
+  text-shadow: 0 0 40px rgba(247, 183, 49, 0.4);
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  color: var(--sacred-white);
+}
+
+p {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: rgba(248, 249, 250, 0.9);
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+/* Aum Watermark Background */
+.aum-watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 800px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' text-anchor='middle' dominant-baseline='middle' font-size='60' fill='%23f7b731' opacity='0.3'%3Eॐ%3C/text%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: aumPulse 12s ease-in-out infinite;
+}
+
+@keyframes aumPulse {
+  0%, 100% { opacity: 0.03; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.06; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* Cosmic Particle Background */
+.cosmic-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--divine-gold);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: particleFloat 20s linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Smoke Effect */
+.smoke-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  animation: smokeDrift 30s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes smokeDrift {
+  0%, 100% { transform: translateX(0) translateY(0); opacity: 0.3; }
+  50% { transform: translateX(30px) translateY(-20px); opacity: 0.5; }
+}
+
+/* Divine Glow Effect */
+.divine-glow {
+  box-shadow: 0 0 40px rgba(247, 183, 49, 0.3),
+              0 0 80px rgba(247, 183, 49, 0.2),
+              0 0 120px rgba(247, 183, 49, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.divine-glow:hover {
+  box-shadow: 0 0 60px rgba(247, 183, 49, 0.5),
+              0 0 120px rgba(247, 183, 49, 0.3),
+              0 0 180px rgba(247, 183, 49, 0.2);
+}
+
+/* Sacred Button Styles */
+.sacred-button {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  padding: 1.2rem 3rem;
+  background: var(--gradient-divine);
+  border: 2px solid var(--divine-gold);
+  color: var(--cosmic-indigo);
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sacred-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.sacred-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.sacred-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(247, 183, 49, 0.4);
+}
+
+/* Parallax Sections */
+.parallax-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-padding);
+  overflow: hidden;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  width: 100%;
+  padding: var(--container-padding);
+}
+
+/* Verse Panel Styles */
+.verse-panel {
+  font-family: var(--font-verse);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-style: italic;
+  color: var(--divine-gold);
+  text-align: center;
+  padding: 3rem;
+  background: rgba(26, 26, 46, 0.6);
+  border: 1px solid rgba(247, 183, 49, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.verse-panel::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  font-size: 8rem;
+  color: rgba(247, 183, 49, 0.1);
+  font-family: serif;
+}
+
+/* Fade In Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 4rem 0;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .verse-panel {
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .sacred-button {
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Loading Animation */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(247, 183, 49, 0.2);
+  border-top-color: var(--divine-gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Selection Styling */
+::selection {
+  background: rgba(247, 183, 49, 0.3);
+  color: var(--sacred-white);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cosmic-indigo);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--divine-gold), var(--divine-copper));
+  border-radius: 10px;
+  border: 2px solid var(--cosmic-indigo);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--divine-copper), var(--divine-gold));
+}

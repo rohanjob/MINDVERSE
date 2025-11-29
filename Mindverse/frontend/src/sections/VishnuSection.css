@@ -1,0 +1,380 @@
+/* Vishnu Section - Cosmic Ocean Divine Energy */
+
+.vishnu-section {
+    min-height: 120vh;
+    background: linear-gradient(180deg,
+            rgba(15, 12, 41, 1) 0%,
+            rgba(22, 33, 62, 0.95) 30%,
+            rgba(13, 44, 89, 0.9) 60%,
+            rgba(15, 12, 41, 1) 100%);
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ocean Wave Effects */
+.ocean-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    pointer-events: none;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgba(74, 144, 226, 0.1));
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.wave-1 {
+    animation: waveMove 20s linear infinite;
+    opacity: 0.3;
+}
+
+.wave-2 {
+    animation: waveMove 15s linear infinite reverse;
+    opacity: 0.2;
+}
+
+.wave-3 {
+    animation: waveMove 25s linear infinite;
+    opacity: 0.1;
+}
+
+@keyframes waveMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Vishnu Title */
+.vishnu-title {
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 50%, #1abc9c 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 10s ease infinite;
+    font-weight: 900;
+}
+
+/* Main Card */
+.vishnu-main-card {
+    max-width: 1000px;
+    margin: 0 auto 5rem;
+    padding: 4rem 3rem;
+    background: linear-gradient(135deg,
+            rgba(26, 26, 46, 0.8) 0%,
+            rgba(22, 33, 62, 0.7) 100%);
+    border: 2px solid rgba(74, 144, 226, 0.4);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.vishnu-main-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%,
+            rgba(74, 144, 226, 0.1) 0%,
+            transparent 70%);
+    animation: aumPulse 8s ease-in-out infinite;
+}
+
+/* Symbol Container */
+.vishnu-symbol-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.chakra-visual {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chakra-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--ganga-blue);
+    border-radius: 50%;
+    animation: chakraRotate 10s linear infinite;
+    box-shadow: 0 0 40px rgba(74, 144, 226, 0.5);
+}
+
+@keyframes chakraRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.chakra-ring::before,
+.chakra-ring::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    border: 2px solid var(--divine-gold);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chakra-ring::after {
+    width: 60%;
+    height: 60%;
+    border-color: var(--ganga-blue);
+}
+
+.chakra-center {
+    font-size: 2.5rem;
+    color: var(--divine-gold);
+    text-shadow: 0 0 30px rgba(247, 183, 49, 0.6);
+    z-index: 10;
+    animation: aumPulse 4s ease-in-out infinite;
+}
+
+.shankha-visual {
+    font-size: 5rem;
+    animation: shankhaGlow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(74, 144, 226, 0.5));
+}
+
+@keyframes shankhaGlow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 30px rgba(74, 144, 226, 0.5));
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 50px rgba(74, 144, 226, 0.8));
+    }
+}
+
+/* Mantra */
+.vishnu-mantra {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.mantra-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: var(--ganga-blue);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.sanskrit-text {
+    font-family: 'Noto Sans Devanagari', var(--font-verse);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    color: var(--divine-gold);
+    margin: 1.5rem 0;
+    font-weight: 600;
+    text-shadow: 0 0 40px rgba(247, 183, 49, 0.5);
+}
+
+.mantra-meaning {
+    font-family: var(--font-verse);
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    color: rgba(248, 249, 250, 0.85);
+    font-style: italic;
+}
+
+/* Description */
+.vishnu-description {
+    padding: 2.5rem;
+    border-top: 1px solid rgba(74, 144, 226, 0.3);
+    border-bottom: 1px solid rgba(74, 144, 226, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.vishnu-description p {
+    text-align: justify;
+    line-height: 1.9;
+    color: rgba(248, 249, 250, 0.9);
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+}
+
+/* Avatars Section */
+.avatars-section {
+    max-width: 1200px;
+    margin: 6rem auto 0;
+    padding: 0 2rem;
+}
+
+.avatars-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--ganga-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+}
+
+.avatars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+}
+
+.avatar-card {
+    background: linear-gradient(135deg,
+            rgba(26, 26, 46, 0.7) 0%,
+            rgba(22, 33, 62, 0.6) 100%);
+    border: 1px solid rgba(74, 144, 226, 0.3);
+    border-radius: 15px;
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.avatar-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: var(--divine-gold);
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.4);
+}
+
+.avatar-symbol {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: avatarFloat 3s ease-in-out infinite;
+}
+
+@keyframes avatarFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.avatar-name {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--divine-gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.avatar-meaning {
+    font-size: 0.9rem;
+    color: rgba(248, 249, 250, 0.7);
+    font-style: italic;
+}
+
+/* Footer */
+.vishnu-footer {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.lotus-decoration {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: lotusBloom 4s ease-in-out infinite;
+}
+
+@keyframes lotusBloom {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.4));
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 40px rgba(74, 144, 226, 0.7));
+    }
+}
+
+.vishnu-blessing {
+    font-family: var(--font-verse);
+    font-size: clamp(1.5rem, 2.5vw, 2.3rem);
+    color: var(--divine-gold);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.blessing-meaning {
+    font-family: var(--font-verse);
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    color: rgba(248, 249, 250, 0.7);
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vishnu-section {
+        padding: 4rem 0;
+    }
+
+    .vishnu-main-card {
+        padding: 3rem 2rem;
+    }
+
+    .vishnu-symbol-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .chakra-visual {
+        width: 100px;
+        height: 100px;
+    }
+
+    .shankha-visual {
+        font-size: 4rem;
+    }
+
+    .avatars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .avatar-symbol {
+        font-size: 2.5rem;
+    }
+}
